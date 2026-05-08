@@ -14,7 +14,7 @@ A command line utility to track movie streaming availability across paid and fre
 ## Installation
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/mackslevin/streamcheck.git](https://github.com/mackslevin/streamcheck.git)
+   git clone https://github.com/mackslevin/streamcheck.git
    cd streamcheck
    ```
 
