@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# Text Editor / OS Temp files
+*~
+*.swp
+.DS_Store
