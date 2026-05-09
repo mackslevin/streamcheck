@@ -55,13 +55,17 @@ class WatchlistManager:
         if not self.data_file.exists():
             self.save_data({})
             print(f"📄 Created new watchlist file: {self.data_file}")
-    
+            
     def load_data(self):
         try:
             with open(self.data_file, 'r') as f:
                 return json.load(f)
-        except (json.JSONDecodeError, FileNotFoundError):
+        except FileNotFoundError:
             return {}
+        except json.JSONDecodeError:
+            print(f"❌ CRITICAL ERROR: Your watchlist file is corrupted or contains invalid JSON.")
+            print(f"Please manually fix the file at {self.data_file} before running streamcheck again.")
+            sys.exit(1)
         
     def save_data(self, data):
         with open(self.data_file, 'w') as f:
